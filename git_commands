@@ -100,3 +100,7 @@ Advanced Commands
 
     git clean -fd
         Removes untracked files from the working directory.
+
+
+initialising git from vs code 
+
