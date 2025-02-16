@@ -1,0 +1,102 @@
+
+    git init
+        Initializes a new Git repository in the current directory.
+
+    git clone <repository>
+        Clones a remote repository to your local machine, including all its history and branches.
+
+    git add <file>
+        Stages the file(s) for commit. You can add a single file or use git add . to add all changes.
+
+    git commit -m "<message>"
+        Records changes to the repository with a commit message describing what was done.
+
+    git status
+        Shows the current status of the working directory and staging area, including changes to be committed.
+
+    git log
+        Displays the commit history of the repository.
+
+    git diff
+        Shows the differences between the working directory and the staging area or between two commits.
+
+    git pull
+        Fetches changes from a remote repository and merges them with the current branch.
+
+    git push
+        Pushes local changes to a remote repository.
+
+    git remote add <name> <url>
+        Adds a new remote repository with a given name (often "origin") and URL.
+
+    git branch
+        Lists all branches in your repository or creates a new branch if you use git branch <branch-name>.
+
+    git checkout <branch-name>
+        Switches to an existing branch.
+
+    git merge <branch-name>
+        Merges the changes from the specified branch into the current branch.
+
+    git fetch
+        Retrieves new commits from a remote repository but doesn’t merge them with the current branch.
+
+    git rebase <branch-name>
+        Reapplies commits from the current branch onto another branch. It helps in keeping a clean history.
+
+    git tag <tag-name>
+        Creates a tag that points to a specific commit (typically used for release points).
+
+    git reset <commit>
+        Resets the current branch to the specified commit, either keeping or discarding changes.
+
+    git rm <file>
+        Removes a file from the working directory and stages the removal for commit.
+
+    git stash
+        Temporarily saves uncommitted changes to a stack, allowing you to work on something else.
+
+    git show <commit>
+        Displays the changes introduced in a specific commit.
+
+Branching and Merging
+
+    git checkout -b <branch-name>
+        Creates a new branch and switches to it.
+
+    git branch -d <branch-name>
+        Deletes a branch after it’s been merged into another branch.
+
+    git merge --no-ff <branch-name>
+        Merges the specified branch into the current branch, creating a merge commit even if a fast-forward merge is possible.
+
+    git rebase -i <commit>
+        Starts an interactive rebase session, allowing you to rewrite history by editing, squashing, or reordering commits.
+
+Working with Remote Repositories
+
+    git remote -v
+        Displays the remote repositories associated with the local repository.
+
+    git fetch <remote>
+        Fetches updates from a remote repository without merging.
+
+    git push <remote> <branch>
+        Pushes changes to a specified remote branch.
+
+    git pull <remote> <branch>
+        Pulls changes from a remote branch and merges them with the current branch.
+
+Advanced Commands
+
+    git reflog
+        Displays a log of where your HEAD and branch pointers have been, useful for recovering lost commits.
+
+    git bisect
+        Helps in finding the commit that introduced a bug by performing a binary search.
+
+    git cherry-pick <commit>
+        Applies the changes introduced by a specific commit from one branch to another.
+
+    git clean -fd
+        Removes untracked files from the working directory.
