@@ -1,0 +1,43 @@
+# Think of Git as having three zones:
+
+Working Directory → where you make changes.
+Staging Area → a temporary holding area for changes you want to commit.
+Repository (.git) → permanent history (committed files).
+
+The staging area lets you prepare and review changes before committing.
+It’s like a “shopping cart” where you collect items before checkout
+
+git add  --> Moves changes from Working Directory → Staging Area.
+Now Git knows you want this change included in the next commit.
+
+git add <file>
+git add .     # adds all modified files
+
+
+git commit --> Moves changes from Staging Area → Repository (saved in history).
+Now the change is permanently recorded in Git history.
+
+git commit -m "Your message here"
+
+
+git statu --> Shows what’s happening in your repo
+Which files are modified
+Which files are staged for commit
+Which files are untracked (not yet in Git)
+
+git status
+
+
+workflow example
+
+# Step 1: Check status
+git status
+
+# Step 2: Stage changes
+git add app.py
+
+# Step 3: Commit changes
+git commit -m "Fixed bug in login logic"
+
+# Step 4: Verify
+git status   # should say 'nothing to commit'
