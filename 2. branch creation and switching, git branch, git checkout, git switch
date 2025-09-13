@@ -1,0 +1,56 @@
+
+# What is a Branch in Git?
+
+A branch is simply a pointer to a commit in Git history.
+By default, every Git repo starts with a branch named master or main.
+Branches allow you to work on new features, bug fixes, or experiments without affecting the main codebase.
+
+1. List all branches
+git branch
+
+example: 
+* main
+  feature-1
+
+2. Create a new branch
+git branch feature-1
+This creates a new branch named feature-1 at the current commit.
+But it does not switch to it — you’ll still be on your old branch.
+
+3. Switch to an existing branch
+git checkout feature-1
+Moves you from main → feature-1.
+
+4. Delete a branch
+git branch -d feature-1
+
+5. Create + switch in one step
+git checkout -b feature-2
+reates a new branch feature-2 and immediately switches to it.
+
+6. Switch to an existing branch (new command)
+git switch feature-1
+git switch -c feature-3
+Same as git checkout -b feature-3, but clearer.
+
+Workflow Example
+
+# Start on main
+git branch
+# * main
+
+# Create new branch
+git branch feature-1
+
+# Switch to it
+git switch feature-1
+# or: git checkout feature-1
+
+# Verify
+git branch
+# main
+# * feature-1
+
+
+
+
