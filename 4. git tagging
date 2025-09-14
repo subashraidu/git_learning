@@ -1,0 +1,52 @@
+
+git tag v1.0  --> In Git, a tag is like a label or snapshot that points to a specific commit.
+Unlike branches, tags don’t change – they’re permanent bookmarks in history.
+Commonly used for marking releases (v1.0, v2.5, etc.).
+
+Types of Tags
+Lightweight Tag --> Just a pointer to a commit.
+git tag v1.0
+
+Annotated Tag --> Stores metadata like tagger’s name, date, and message.
+Preferred for releases.
+git tag -a v1.0 -m "Release version 1.0"
+
+List all tags:
+git tag
+
+Show details of a tag:
+git show v1.0
+
+Push a specific tag to remote:
+git push origin v1.0
+
+Push all tags:
+git push origin --tags
+
+Delete a tag (local & remote):
+git tag -d v1.0
+git push origin --delete v1.0
+
+
+Why Tags are Useful for a DevOps Engineer?
+
+Release Management
+Tags mark stable versions of code.
+Example: Tag v1.0 → deploy that exact version in production.
+
+CI/CD Pipelines
+Many pipelines trigger only when a tag is pushed.
+Example: Push v2.0 → Jenkins/GitHub Actions builds a release artifact.
+
+Rollbacks
+If something breaks, you can quickly roll back to the last good tag.
+Example: Checkout git checkout v1.5.
+
+Consistency Across Environments
+Same tag ensures dev, staging, and production are running identical code.
+
+Auditing & Compliance
+Tags provide a history of official releases.
+Useful for audits: “What code was deployed on 2025-09-01?” → check the tag.
+
+ 
