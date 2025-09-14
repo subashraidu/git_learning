@@ -1,0 +1,43 @@
+Remote Repository
+A remote repo is a version of your Git project hosted on a server (like GitHub, GitLab, Bitbucket).
+It enables collaboration, backups, and CI/CD integrations.
+
+Example Workflow (DevOps):
+Your team stores Kubernetes manifests in GitHub.
+Jenkins pipeline pulls the repo from GitHub (remote repo) before applying changes.
+
+HTTPS Authentication
+Uses username + password or Personal Access Token (PAT).
+Easier setup, but requires entering credentials unless cached.
+Useful for quick setups or CI/CD tools.
+Less secure than SSH (password/token exposure risk).
+
+SSH Authentication
+Uses SSH keys (public/private keypair).
+More secure, avoids repeated credential prompts.
+Preferred for DevOps automation, because pipelines/servers can use SSH keys without exposing passwords.
+<command> ssh-keygen
+
+git push
+Sends local commits → remote repo.
+git push origin main
+
+git pull
+Fetches + merges changes from remote → local repo.
+git pull origin main
+
+git remote -v
+Lists remote repositories linked to your local repo.
+git remote -v
+
+git remote add origin <url>
+inks a local repo to a remote repo (usually named origin).
+git remote add origin git@github.com:user/project.git
+git push -u origin main
+
+Fork --> A fork is a copy of a repository under your account.
+Common in open-source contributions.
+Workflow (DevOps):
+Fork repo → modify in your account → test in staging → create Pull Request.
+
+ 
