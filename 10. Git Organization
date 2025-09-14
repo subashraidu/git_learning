@@ -1,0 +1,21 @@
+Git Organization
+A Git organization is a way to group repositories, users, and teams under a single umbrella (e.g., a company, project, or department).
+Available on Git hosting platforms like GitHub Organizations, GitLab Groups, Bitbucket Workspaces.
+
+Setup Organization & Teams
+
+Org: AcmeCorp
+Teams inside Org:
+dev-team → full access to application-repos
+ops-team → full access to infra-repos
+security-team → read-only for audits
+
+repos
+AcmeCorp/app-frontend
+AcmeCorp/app-backend
+AcmeCorp/infra-k8s
+AcmeCorp/terraform-infra
+
+DevOps engineer working on Kubernetes manifests:
+git clone git@github.com:AcmeCorp/infra-k8s.git
+cd infra-k8s
