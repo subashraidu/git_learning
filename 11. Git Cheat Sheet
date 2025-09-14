@@ -1,0 +1,77 @@
+
+Git Basics
+git init                # Initialize a new repo
+git clone <url>         # Clone repo (local copy)
+git status              # Check status of working directory
+git add <file>          # Stage changes
+git add .               # Stage all changes
+git commit -m "msg"     # Commit staged changes
+git log                 # Show commit history
+git diff                # Show unstaged changes
+git diff --staged       # Show staged changes
+
+Branching & Switching
+git branch              # List branches
+git branch <name>       # Create new branch
+git checkout <name>     # Switch branch
+git switch <name>       # Safer way to switch
+git switch -c <name>    # Create & switch
+git branch -d <name>    # Delete branch
+
+Merging & Rebasing
+git merge <branch>      # Merge branch into current
+git rebase <branch>     # Reapply commits on top of another branch
+
+Remote Repositories
+git remote -v           # Show remote URLs
+git remote add origin <url>   # Add remote repo
+git remote remove origin      # Remove remote repo
+git push origin main          # Push branch to remote
+git pull origin main          # Fetch + merge from remote
+git fetch                     # Download updates, don’t merge
+
+Reset, Restore & Revert
+git reset --soft HEAD~1       # Undo last commit, keep changes staged
+git reset --mixed HEAD~1      # Undo last commit, keep changes unstaged
+git reset --hard HEAD~1       # Undo last commit, discard changes
+git restore <file>            # Restore file from last commit
+git revert <commit_id>        # Safely undo a commit (new commit created)
+
+Stashing
+git stash              # Save uncommitted changes
+git stash list         # View stashes
+git stash pop          # Apply + remove stash
+git stash apply        # Apply but keep stash
+
+Tagging (Releases)
+git tag v1.0.0             # Create tag
+git tag -a v1.0.0 -m "msg" # Annotated tag
+git push origin v1.0.0     # Push tag to remote
+git tag                    # List tags
+
+Git Ignore
+gitignore → exclude files from version control
+
+Git Logging & Blame
+git log --oneline --graph --decorate  # Pretty log
+git show <commit_id>                  # Show commit details
+git blame <file>                      # See who changed which line
+
+Forks & Collaboration
+# Workflow in GitHub/GitLab
+1. Fork repo (copy to personal/org account)
+2. Clone your fork → make changes
+3. Push branch → Open Pull Request (PR)
+
+Git Diff (Comparisons)
+git diff HEAD~1 HEAD         # Compare last commit with current
+git diff branch1 branch2     # Compare two branches
+
+Configurations
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+git config --list             # List configs
+git config --global core.editor "vim"   # Set default editor
+git config --global alias.st status     # Create alias
+
+
