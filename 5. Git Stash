@@ -1,0 +1,12 @@
+
+Git Stash --> Git command that temporarily saves (stashes) your uncommitted changes (both staged and unstaged) so you can work on something else without committing them.
+
+Stash your changes
+git stash
+
+To include untracked files too:
+git stash -u
+
+View stashes
+git stash list
+
