@@ -1,0 +1,24 @@
+
+git diff --> shows the difference between two states of your repository.
+By default, it compares working directory changes vs the staging area (index).
+You can also compare staged changes, commits, or branches.
+
+View Unstaged Changes: Shows changes in your working directory that haven’t been staged
+git diff
+
+Workflow  :
+You edited deploy.sh but want to verify before staging. (Confirms only the intended config change is there)
+git diff deploy.sh
+
+View Staged Changes: Shows differences between the staging area and the last commit.
+git diff --staged
+
+Compare Between Commits
+git diff commit1 commit2
+
+Compare Branches
+git diff main feature-branch
+
+Compare Against Remote Branch
+git fetch origin
+git diff main origin/main
