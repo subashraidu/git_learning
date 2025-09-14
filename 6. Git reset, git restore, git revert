@@ -1,0 +1,63 @@
+
+git reset --> Moves the HEAD pointer (and optionally the staging area and working directory) to a specific commit.
+Used to discard commits or unstage files.
+
+Types:
+Soft Reset --> Keeps changes in staging area. Use when you want to re-commit changes differently.
+git reset --soft <commit_id>
+
+Mixed Reset (default) --> Keeps changes in working directory, unstaged.
+git reset <commit_id>
+
+Hard Reset --> Deletes commits + wipes working directory.DANGEROUS – you lose changes permanently.
+git reset --hard <commit_id>
+
+Example Workflow: (Now abc123 is removed from history (locally))
+git log --oneline
+abc123 Fix bug
+def456 Add feature
+ghi789 Initial commit
+
+# Suppose you want to go back to commit def456
+git reset --hard def456
+
+
+git revert --> Creates a new commit that undoes the changes of a previous commit.Unlike reset, it does not remove history → safe for shared repos.
+
+Example Workflow: 
+# Check log
+git log --oneline
+abc123 Broke login page
+def456 Add login form
+ghi789 Initial commit
+
+# Revert the bad commit
+git revert abc123
+
+
+git restore --> Introduced in newer Git versions to simplify discarding changes.Works on files, not commits.
+
+Discard local changes (unstaged): Restores the file to last committed version.
+git restore file.txt
+
+Unstage a file: Moves file back from staging → working directory.
+git restore --staged file.txt
+
+
+Real-world workflow example (DevOps):
+
+You accidentally committed secrets locally → use (to remove commit but keep files)
+git reset --soft HEAD~1
+
+A teammate pushed a buggy deployment script → use (to undo in a new commit)
+git revert <commit_id>
+
+You messed up a config file before committing → use (to restore last committed version).
+git restore config.yaml
+
+
+
+
+
+
+
