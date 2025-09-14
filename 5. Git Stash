@@ -10,3 +10,29 @@ git stash -u
 View stashes
 git stash list
 
+Apply the latest stash -- Your stash is reapplied, but it stays in the list.
+git stash apply
+
+Apply and remove from stash -- Reapplies and deletes from stash list.
+git stash pop
+
+Drop a stash manually
+git stash drop stash@{0}
+
+Clear all stashes
+git stash clear
+
+Example Workflow
+
+# You’re coding on feature branch
+git status
+# shows modified files
+
+# Need to switch to main branch quickly
+git stash          # saves your changes
+git checkout main  # now branch is clean
+
+# Later, return to feature branch
+git checkout feature
+git stash pop      # get your changes back
+
