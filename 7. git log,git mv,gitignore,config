@@ -1,0 +1,85 @@
+
+git log --> helps you view commit history, which is critical for auditing, debugging deployments, or tracking changes.
+
+Basic log
+git log
+
+One-line commits
+git log --oneline
+
+Graph view (branching history)
+git log --oneline --graph --all
+
+See changes for a file
+git log -p file.txt
+
+
+git mv --> Renaming or moving a file while keeping its history.
+
+Rename a file
+git mv oldname.txt newname.txt
+
+Move file to another folder
+git mv config.yaml config/config.yaml
+
+Example Workflow
+Move docker-compose.yml into a deployment/ folder:
+git mv docker-compose.yml deployment/docker-compose.yml
+git commit -m "Reorganized deployment files"
+
+.gitignore --> is a special file in a Git repository that tells Git which files or directories to ignore (not track).
+Prevents unnecessary, sensitive, or generated files from being committed.
+Each line in .gitignore specifies a pattern to match files/folders.
+
+As a DevOps engineer, you often deal with:
+Secrets/configs (.env, config.yml, id_rsa)
+Build artifacts (*.log, *.tmp, *.out)
+Dependency folders (node_modules/, venv/, target/)
+OS/system files (.DS_Store, Thumbs.db)
+
+Example .gitignore
+# Ignore environment files
+.env
+*.key
+*.pem
+
+# Ignore logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Ignore dependency folders
+node_modules/
+venv/
+target/
+
+# Ignore build outputs
+dist/
+build/
+
+# Ignore system/IDE files
+.DS_Store
+.idea/
+.vscode/
+
+Example Workflow (DevOps):
+You accidentally committed a .env file with secrets.
+To remove from repo but keep locally:
+
+git rm --cached .env
+echo ".env" >> .gitignore
+git commit -m "Stop tracking .env file"
+
+
+git configurations
+
+User Identity: Sets who made commits (important for auditing).
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+Default Editor: When Git needs you to enter a commit/rebase message
+git config --global core.editor "vim"
+# or
+git config --global core.editor "nano"
+
+
