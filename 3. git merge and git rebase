@@ -1,2 +1,17 @@
 
 Git Merge --> Combine changes from one branch into another.
+Creates a new commit (merge commit) that ties both branches together.
+
+git checkout main
+git merge feature
+
+
+Git Rebase --> Move or “replay” commits from one branch on top of another.
+Instead of a merge commit, Git rewrites history so it looks like your branch was developed after the latest changes from the base branch.
+
+git checkout feature
+git rebase main
+
+# Rule of Thumb for DevOps/Team Work:
+Use merge in shared/public branches (safe).
+Use rebase on your personal/local feature branch (clean history).
